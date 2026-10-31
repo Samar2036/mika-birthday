@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101426">
+<title>A Letter For Mika</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Manrope:wght@300;400;500;600&display=swap');
+:root{--night:#0c1020;--ink:#32271f;--paper:#f3e4cd;--gold:#e7bd7c;--rose:#d98b91;--muted:#d5c5b7}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;background:radial-gradient(ellipse at 18% 10%,#26304d 0%,transparent 42%),radial-gradient(ellipse at 90% 90%,#482a3b 0%,transparent 38%),#0b0e1b;font-family:Manrope, sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.48;background-image:radial-gradient(1px 1px at 10% 20%,#fff 99%,transparent),radial-gradient(1px 1px at 70% 12%,#f6d9a5 99%,transparent),radial-gradient(2px 2px at 88% 38%,#fff 99%,transparent),radial-gradient(1px 1px at 42% 76%,#fff 99%,transparent),radial-gradient(1px 1px at 23% 85%,#f6d9a5 99%,transparent);background-size:230px 190px}
+.shell{position:relative;z-index:1;max-width:1250px;margin:auto;padding:34px 28px 46px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#d8c6b6;font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:10px}.brand-mark{color:var(--gold);font-size:20px}
+.sound{border:1px solid #ffffff32;border-radius:999px;background:#ffffff08;color:#ead9c7;padding:10px 14px;cursor:pointer;font:inherit;letter-spacing:.08em}
+.hero{text-align:center;margin:34px auto 28px;max-width:700px}
+.eyebrow{color:var(--gold);font-size:10px;letter-spacing:.32em;text-transform:uppercase}
+h1{font:400 clamp(42px,7vw,78px)/.98 'Great Vibes',cursive;margin:14px 0 12px;color:#f8e5ca;text-shadow:0 0 32px #f1c98b25}
+.subtitle{font:400 19px 'Cormorant Garamond',serif;color:#d8c4bb;letter-spacing:.04em}
+.layout{display:grid;grid-template-columns:minmax(290px,.82fr) minmax(350px,1.18fr);gap:26px;align-items:stretch}
+.left{display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:570px;padding:24px 16px;position:relative}
+moon{display:block}
+.moon{position:absolute;top:22px;left:15%;font-size:36px;color:#f2d8a1;filter:drop-shadow(0 0 16px #f2d8a177)}
+.intro-note{font:italic 19px 'Cormorant Garamond',serif;color:#c8b8b6;text-align:center;max-width:320px;margin:0 0 35px;line-height:1.55}
+.envelope-wrap{width:min(100%,390px);perspective:900px;filter:drop-shadow(0 28px 28px #0007);cursor:pointer;transition:transform .35s}
+.envelope-wrap:hover{transform:translateY(-5px)}
+.envelope{height:235px;position:relative;background:linear-gradient(145deg,#f9e9d2,#d8bfa0);border-radius:5px 5px 12px 12px;overflow:hidden;border:1px solid #f9dfb6}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 49.7%,#b99b7c 50%,transparent 50.5%),linear-gradient(35deg,transparent 49.7%,#b99b7c 50%,transparent 50.5%);opacity:.75}
+.flap{position:absolute;top:0;left:0;width:100%;height:58%;background:linear-gradient(155deg,#fff0da,#d9bea0);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease;z-index:3;filter:drop-shadow(0 2px 3px #8b654c55)}
+.seal{position:absolute;z-index:4;left:50%;top:54%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#d9978c,#9e4f5b);border:2px solid #e9b7a6;color:#ffe6c8;font-size:23px;box-shadow:0 4px 9px #74434b77;transition:opacity .3s;cursor:pointer;padding:0}
+.envelope-label{position:absolute;z-index:2;bottom:23px;left:0;right:0;text-align:center;color:#674b3d;font:italic 28px 'Great Vibes',cursive}
+.envelope-label small{display:block;font:14px 'Cormorant Garamond',serif;margin-top:2px}
+.envelope-wrap.open .flap{transform:rotateX(180deg)}.envelope-wrap.open .seal{opacity:0}
+.open-btn{margin-top:30px;border:1px solid #e9c58e;background:linear-gradient(135deg,#33251f,#171522);border-radius:999px;padding:15px 27px;color:#f5dfbf;font:500 12px Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;box-shadow:0 0 25px #e5b77915;transition:.25s}
+.open-btn:hover{background:#594033;box-shadow:0 0 25px #e5b77928}
+.hint{font-size:10px;letter-spacing:.14em;color:#948b9c;margin-top:15px;text-align:center}
+.letter{position:relative;background:linear-gradient(145deg,#f7ead6,#e8d2b6);color:var(--ink);padding:clamp(25px,4vw,48px);min-height:590px;box-shadow:0 22px 60px #0005;border:1px solid #fff1d5;border-radius:3px;overflow:hidden}
+.letter:before{content:"";position:absolute;inset:9px;border:1px solid #8e6b4c30;pointer-events:none}
+.letter:after{content:"✧";position:absolute;right:25px;top:18px;font-size:28px;color:#ad8b69}
+.letter-head{font:italic 20px 'Cormorant Garamond',serif;margin:0 0 18px}
+.letter-copy{font:500 19px/1.58 'Cormorant Garamond',serif;letter-spacing:.012em;min-height:280px}
+.sentence{display:block;margin:0 0 12px;opacity:0;transform:translateY(5px);transition:opacity .5s,transform .5s}.sentence.visible{opacity:1;transform:none}
+.glow-word{display:inline;border:0;border-radius:20px;padding:0 5px;background:transparent;color:#8c4d54;font:inherit;cursor:pointer;transition:.25s;text-decoration:underline;text-decoration-color:#bc8b7a;text-decoration-style:dotted;text-underline-offset:4px}
+.glow-word:hover,.glow-word.active{color:#fff;background:#b66c72;box-shadow:0 0 18px #bd747777;text-decoration:none}
+.glow-word[data-tone="gold"].active{background:#bd8a3f;box-shadow:0 0 18px #d3a64c88}
+.glow-word[data-tone="blue"].active{background:#7187a8;box-shadow:0 0 18px #7897c288}
+.glow-word[data-tone="violet"].active{background:#9874a9;box-shadow:0 0 18px #9874a988}
+.word-note{min-height:30px;margin:2px 0 20px;font:italic 15px 'Cormorant Garamond',serif;color:#976a60;opacity:0;transition:opacity .25s}.word-note.show{opacity:1}
+.secret{width:100%;border:1px solid #c08b6d;border-radius:8px;padding:18px 20px;background:radial-gradient(ellipse at 15% 20%,#273653,#171a2d 70%);color:#f5dfc0;text-align:center;cursor:pointer;transition:.3s;position:relative;overflow:hidden}
+.secret:hover{box-shadow:0 0 28px #bd8b6630;transform:translateY(-2px)}
+.lock{display:block;font-size:20px;margin-bottom:5px}.secret small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#d6b995;margin-bottom:5px}
+.secret strong{font:500 22px 'Cormorant Garamond',serif}
+.secret-message{display:none;font:italic 20px/1.5 'Cormorant Garamond',serif;padding-top:14px;color:#fff0dc}.secret.revealed .secret-message{display:block}.secret.revealed .secret-prompt{display:none}
+.closing{margin:27px 0 0;text-align:center;font:italic 23px/1.35 'Cormorant Garamond',serif;color:#6e4a3b}
+.ornament{display:flex;align-items:center;gap:12px;color:#9d7a60;justify-content:center;margin-top:22px;font-size:14px}.ornament:before,.ornament:after{content:"";height:1px;background:#a88b6b66;flex:1}
+.footer{text-align:center;color:#8f8497;font-size:10px;letter-spacing:.13em;margin-top:24px}
+.petal{position:fixed;top:-30px;z-index:4;pointer-events:none;animation:fall linear forwards;font-size:17px;opacity:.75}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg);opacity:0}}
+@media(max-width:800px){.shell{padding:22px 15px 32px}.hero{margin-top:28px}.layout{grid-template-columns:1fr;gap:18px}.left{min-height:410px;padding:24px 10px 30px}.moon{top:4px}.intro-note{margin-bottom:22px}.envelope{height:210px}.letter{min-height:0;padding:29px 25px}.letter-copy{font-size:18px}.closing{font-size:21px}.topline{font-size:9px;letter-spacing:.14em}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+
+/* Two clear scenes: envelope first, letter only after an explicit open action. */
+body:not(.opened) .letter{display:none!important}
+body:not(.opened) .layout { display: flex; justify-content: center; }
+body:not(.opened) .left { width: min(100%, 560px); min-height: 470px; }
+body.opened .layout { display: flex; justify-content: center; }
+body.opened .left { display: none !important; }
+body.opened .letter {
+  display: block !important;
+  width: min(100%, 780px);
+  animation: letterIn .75s ease both;
+}
+@keyframes letterIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Single-piece feather quill: feather, shaft and nib stay visually connected. */
+.letter-writing-area{position:relative}
+.writing-pen{
+  position:absolute;z-index:5;left:0;top:0;width:40px;height:58px;
+  opacity:0;pointer-events:none;transform:translate(-8px,-48px) rotate(7deg);
+  transform-origin:14px 48px;transition:opacity .22s ease;
+}
+.writing-pen.active{opacity:1}
+.quill-svg{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(1px 2px 2px #5a3b4d45)}
+.sentence{position:relative}
+
+
+body.opened .letter{display:block!important} body.opened .left{display:none!important}
+
+/* Responsive refinements for phones and tablets */
+html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+button { touch-action: manipulation; }
+@media (max-width: 600px) {
+  .shell { width: 100%; padding: 18px 14px 28px; }
+  .topline { align-items: center; gap: 8px; font-size: 9px; letter-spacing: .09em; }
+  .brand { gap: 6px; min-width: 0; }
+  .sound { padding: 9px 11px; white-space: nowrap; font-size: 10px; }
+  .hero { margin: 26px auto 24px; padding: 0 3px; }
+  h1 { font-size: clamp(38px, 10vw, 56px); line-height: .98; margin: 12px 0; }
+  .subtitle { font-size: 17px; line-height: 1.35; }
+  .eyebrow { font-size: 9px; letter-spacing: .2em; }
+  .layout { display: flex; flex-direction: column; gap: 14px; }
+  .left { min-height: 0; width: 100%; padding: 22px 6px 25px; }
+  .moon { top: 2px; left: 8%; font-size: 30px; }
+  .intro-note { font-size: 18px; margin: 0 0 22px; }
+  .envelope-wrap { width: min(100%, 340px); }
+  .envelope { height: clamp(175px, 54vw, 220px); }
+  .envelope-label { font-size: 25px; bottom: 17px; }
+  .seal { width: 52px; height: 52px; }
+  .open-btn { margin-top: 22px; padding: 14px 23px; min-height: 46px; }
+  .hint { font-size: 9px; margin-top: 12px; }
+  .letter { width: 100%; min-height: 0; padding: 29px 23px; }
+  .letter-head { font-size: 21px; margin-bottom: 15px; }
+  .letter-copy { min-height: 0; font-size: 19px; line-height: 1.62; overflow-wrap: anywhere; }
+  .sentence { margin-bottom: 13px; }
+  .word-note { font-size: 15px; margin-bottom: 17px; }
+  .secret { padding: 17px 13px; }
+  .secret strong { font-size: 21px; line-height: 1.3; }
+  .secret-message { font-size: 19px; }
+  .closing { font-size: 21px; line-height: 1.45; }
+  .footer { font-size: 9px; line-height: 1.6; margin-top: 20px; }
+  body.opened .layout { display: flex; flex-direction: column; }
+  body.opened .letter { width: 100%; }
+}
+@media (max-width: 360px) {
+  .shell { padding-left: 10px; padding-right: 10px; }
+  .topline { font-size: 8px; }
+  .brand-mark { font-size: 16px; }
+  .sound { padding: 8px 9px; font-size: 9px; }
+  h1 { font-size: 36px; }
+  .letter { padding: 25px 18px; }
+  .letter-copy { font-size: 18px; }
+  .closing { font-size: 19px; }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .shell { padding: 26px 18px 36px; }
+  .layout { grid-template-columns: minmax(240px,.8fr) minmax(300px,1.2fr); gap: 18px; }
+  .letter { padding: 30px 25px; }
+  .letter-copy { font-size: 18px; }
+}
+
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topline"><div class="brand"><span class="brand-mark">✧</span> A little piece of my universe</div><button class="sound" id="restart" aria-label="Restart letter">↻ &nbsp; Close Letter</button></div>
+  <header class="hero"><div class="eyebrow">Written in stardust · meant for you</div><h1>For You, A Thousand Times Over</h1><div class="subtitle">Some words find their way to you, no matter the distance.</div></header>
+  <main class="layout">
+    <section class="left" aria-label="Sealed letter">
+      <div class="moon">☾</div>
+      <p class="intro-note">Somewhere between all the stars<br>and all the things I never say…</p>
+      <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="Open the sealed letter">
+        <div class="envelope"><div class="flap"></div><button class="seal" id="sealBtn" type="button" aria-label="Open the letter">✿</button><div class="envelope-label">For Mika<small>♡</small></div></div>
+      </div>
+      <button class="open-btn" id="openBtn">✉ &nbsp; Tap to open</button>
+      <div class="hint" id="hint">FROM SUMMER</div>
+    </section>
+    <article class="letter" aria-label="Your letter">
+      <p class="letter-head">Happy birthday, Lil Lady ♡</p>
+      <div class="letter-writing-area" id="writingArea"><span class="writing-pen" id="writingPen" aria-hidden="true">
+      <svg class="quill-svg" viewBox="0 0 52 78" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="featherFill" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#fff2d8"/>
+            <stop offset=".38" stop-color="#d7b7d1"/>
+            <stop offset=".72" stop-color="#9b79ad"/>
+            <stop offset="1" stop-color="#60466e"/>
+          </linearGradient>
+          <linearGradient id="quillShaft" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#674532"/>
+            <stop offset=".5" stop-color="#e7c99b"/>
+            <stop offset="1" stop-color="#79533b"/>
+          </linearGradient>
+        </defs>
+        <path d="M9 56 C-2 35 10 9 42 3 C43 26 33 43 9 56Z" fill="url(#featherFill)" stroke="#92709b" stroke-width="1.2"/>
+        <path d="M8 56 Q26 28 40 5" fill="none" stroke="#fff0d5" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M15 43 L5 31 M21 34 L8 23 M27 25 L14 15 M31 19 L22 9 M15 43 L29 39 M21 34 L34 29 M27 25 L38 20" fill="none" stroke="#ead4e8" stroke-width="1"/>
+        <path d="M8 55 L42 3" stroke="url(#quillShaft)" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M8 55 L3 68 L13 61Z" fill="#8b6b4c" stroke="#5b4133" stroke-width="1"/>
+        <path d="M3 68 L8 62" stroke="#e9d2aa" stroke-width="1.2"/>
+      </svg>
+    </span><div class="letter-copy" id="letterCopy" aria-live="polite">
+        <span class="sentence" data-i="0">Happy birthday to the girl who makes my world feel softer, brighter, and infinitely more beautiful just by being in it.</span>
+        <span class="sentence" data-i="3">If I could give you anything today, it would be the chance to see yourself through my eyes, so you could understand how wonderfully rare you are, and how much happiness your existence brings me.</span>
+        <span class="sentence" data-i="4">There are so many ways I could start this, but maybe the simplest truth is, you make everything softer.</span>
+        <span class="sentence" data-i="3">Even on my heaviest days, the thought of you feels like a quiet place my <button class="glow-word" data-tone="rose" data-note="A small, steady place where all my scattered pieces can rest.">heart</button> always returns to.</span>
+        <span class="sentence" data-i="4">You are the gentleness in my chaos, the calm in my noise, and the <button class="glow-word" data-tone="gold" data-note="Not a light that asks me to change just one that helps me see.">light</button> I didn't know I needed until you existed in my life.</span>
+        <span class="sentence" data-i="5">I love how you see the world, the way you notice small things, the way you feel so deeply, the way you turn ordinary moments into something <button class="glow-word" data-tone="blue" data-note="You make the ordinary feel like something I want to keep forever.">beautiful</button>.</span>
+        <span class="sentence" data-i="6">Distance can keep us apart in places, but it never keeps us apart in feeling. Because no matter where we are, my thoughts <button class="glow-word" data-tone="violet" data-note="Across every mile, every time zone, every quiet hour.">always</button> find you.</span>
+        <span class="sentence" data-i="7">You are my favourite what-if that turned into a reality and you are the reason my world feels a little more like home.</span>
+        <span class="sentence" data-i="8">You are the genesis of my soul, and you shall be its final silence; the first whisper of my existence and the last echo that fades when eternity closes its eyes. I Love you.. I Love you till Eternity and Beyond.</span>
+      </div></div>
+      <div class="word-note" id="wordNote" aria-live="polite"></div>
+      <button class="secret" id="secret">
+        <span class="lock">♙</span><div class="secret-prompt"><small>One last little thing</small><strong>Tap to reveal what I've to say</strong></div>
+        <div class="secret-message">Sometimes I catch myself imagining all the versions of my life that could have been, and in every one worth living, somehow, I am still finding my way to you. You aren't just someone I love. You're someone I would choose, even without knowing how our story ends.</div>
+      </button>
+      <div class="ornament">♥</div>
+      <p class="closing">May this new year of your life be gentle with your heart, generous with your dreams, and full of little reasons to smile. I hope you receive everything you desire. I Love you My Lil Princess.<br><br>And if I could begin the universe again,<br>I'd still hope to find you in it.</p>
+    </article>
+  </main>
+  <div class="footer">For My Lil Kitten | From Samar</div>
+</div>
+<script>
+
+const envelope = document.getElementById('envelope');
+const openBtn = document.getElementById('openBtn');
+const sealBtn = document.getElementById('sealBtn');
+const sentences = Array.from(document.querySelectorAll('.sentence'));
+const pen = document.getElementById('writingPen');
+const area = document.getElementById('writingArea');
+let opened = false;
+let timers = [];
+
+function clearTimers() {
+  timers.forEach(id => clearTimeout(id));
+  timers = [];
+}
+
+function petals(count) {
+  const chars = ['✿','❀','✧','♥'];
+  for (let i=0; i<count; i++) {
+    const p = document.createElement('span');
+    p.className = 'petal';
+    p.textContent = chars[Math.floor(Math.random()*chars.length)];
+    p.style.left = (Math.random()*100) + 'vw';
+    p.style.animationDuration = (5+Math.random()*6) + 's';
+    p.style.animationDelay = (Math.random()*1.8) + 's';
+    p.style.color = ['#e8b8ad','#f0d5a7','#d5c6e6'][Math.floor(Math.random()*3)];
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 13000);
+  }
+}
+
+function movePenTo(el) {
+  if (!pen || !area || !el) return;
+  const a = area.getBoundingClientRect();
+  const r = el.getBoundingClientRect();
+  pen.style.left = Math.max(0, r.left-a.left-3) + 'px';
+  pen.style.top = Math.max(0, r.top-a.top-6) + 'px';
+  pen.classList.add('active');
+}
+
+function writeLetter() {
+  let sentenceIndex = 0;
+  const speed = 65;
+  function writeSentence() {
+    if (sentenceIndex >= sentences.length) {
+      if (pen) pen.classList.remove('active');
+      return;
+    }
+    const sentence = sentences[sentenceIndex];
+    sentence.classList.add('visible');
+
+    // Store each original sentence once so the animation can reveal it character by character.
+    if (!sentence.dataset.plainText) sentence.dataset.plainText = sentence.textContent;
+    const text = sentence.dataset.plainText;
+    sentence.textContent = '';
+    const chars = [];
+    for (const ch of text) {
+      const span = document.createElement('span');
+      span.textContent = ch;
+      span.style.opacity = '0';
+      span.style.transition = 'opacity 80ms linear';
+      sentence.appendChild(span);
+      chars.push(span);
+    }
+
+    let charIndex = 0;
+    function writeChar() {
+      if (charIndex >= chars.length) {
+        sentenceIndex++;
+        const timer = setTimeout(writeSentence, 350);
+        timers.push(timer);
+        return;
+      }
+      const ch = chars[charIndex];
+      ch.style.opacity = '1';
+      movePenTo(ch);
+      charIndex++;
+      const timer = setTimeout(writeChar, speed);
+      timers.push(timer);
+    }
+    writeChar();
+  }
+  const timer = setTimeout(writeSentence, 300);
+  timers.push(timer);
+}
+
+function openLetter(event) {
+  if (event) event.stopPropagation();
+  if (opened) return;
+  opened = true;
+  document.body.classList.add('opened');
+  envelope.classList.add('open');
+  // Explicitly reveal the letter scene; CSS rules cannot leave it hidden.
+  const letter = document.querySelector('.letter');
+  if (letter) letter.style.display = 'block';
+  window.scrollTo({top:0, behavior:'smooth'});
+  petals(13);
+  writeLetter();
+}
+
+if (envelope) {
+  envelope.addEventListener('click', openLetter);
+  envelope.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openLetter(e);
+    }
+  });
+}
+if (sealBtn) sealBtn.addEventListener('click', openLetter);
+if (openBtn) openBtn.addEventListener('click', openLetter);
+
+document.querySelectorAll('.glow-word').forEach(word => {
+  word.addEventListener('click', () => {
+    document.querySelectorAll('.glow-word').forEach(w => w.classList.remove('active'));
+    word.classList.add('active');
+    const note = document.getElementById('wordNote');
+    if (note) {
+      note.textContent = word.dataset.note || '';
+      note.classList.add('show');
+    }
+  });
+});
+
+const secret = document.getElementById('secret');
+if (secret) {
+  secret.addEventListener('click', function() {
+    if (!opened) openLetter();
+    this.classList.toggle('revealed');
+    const lock = this.querySelector('.lock');
+    if (lock) lock.textContent = this.classList.contains('revealed') ? '✧' : '♙';
+    if (this.classList.contains('revealed')) petals(22);
+  });
+}
+
+const restart = document.getElementById('restart');
+if (restart) {
+  restart.addEventListener('click', () => {
+    clearTimers();
+    opened = false;
+    document.body.classList.remove('opened');
+    envelope.classList.remove('open');
+    const letter = document.querySelector('.letter');
+    if (letter) letter.style.display = '';
+    sentences.forEach(s => {
+      s.classList.remove('visible');
+      s.style.clipPath = '';
+      s.style.transition = '';
+      if (s.dataset.plainText) delete s.dataset.plainText;
+    });
+    if (pen) pen.classList.remove('active');
+    const note = document.getElementById('wordNote');
+    if (note) note.classList.remove('show');
+    document.querySelectorAll('.glow-word').forEach(w => w.classList.remove('active'));
+    if (secret) secret.classList.remove('revealed');
+    const lock = document.querySelector('.lock');
+    if (lock) lock.textContent = '♙';
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+}
+
+</script>
+</body>
+</html>
